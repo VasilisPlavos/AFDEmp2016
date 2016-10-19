@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class prionicnumbers {
+public class pronicnumbers {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		int pr = 0;
-		int a = 0;
-		int b = 0;
+		long pr = 0;
+		long a = 0;
+		long b = 0;
 
 		System.out.print("Enter the number of pronic numbers to output: ");
 		int i = in.nextInt();
