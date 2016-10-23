@@ -1,16 +1,15 @@
 import java.util.Scanner;
 
 public class testIns {
-	public static Customer [] customers = new Customer[3];
-	public static Insurance [] insurances = new Insurance[3];
+	public static Insurance [] insurances = new Insurance[4];
+	public static Customer[] customers = new Customer[4];
 	public static void main(String[] args) {
-		customers[0] = new Customer("Vasilis", 1991, "male");
-		customers[1] = new Customer("Elpida", 1987, "female");
-		customers[2] = new Customer("Giannis Fallas", 1999, "male");
 
-		insurances[0] = new Insurance(1,1);
-		insurances[1] = new Insurance(1,2);
-		insurances[2] = new Insurance(2,3);
+		insurances[0] = new Insurance("deaf", 1995, "male", 1);
+		insurances[1] = new Insurance("panos", 1995, "male",2);
+		insurances[2] = new Insurance("Elpida", 1987, "female", 1);
+		insurances[3] = new Insurance("Viki", 1993, "female", 1);
+		
 
 
 
@@ -29,32 +28,22 @@ public class testIns {
 			System.out.print("error, try again: ");
 			ch = in.nextInt();}		
 		if (ch == 1){
-			for (int i = 0; i < 3; i++)
-			System.out.println(testIns.insurances[i].toString());
-
+			int i = 0;
+			while (i < insurances.length){
+			System.out.println(insurances[i].toString());
+			i++;
+			}
 		}
 		else if (ch == 2){
 			System.out.println("enter customer id: ");
 			int cid = in.nextInt();
-			for (int i = 0; i < 3; i++){
-				if (testIns.customers[i].getCid() == cid){
-					System.out.println(testIns.insurances[i].toString());
-				}
-			}
-
+			System.out.println(insurances[cid-1].toString());
 		}
 		else if (ch == 3){
 			System.out.println("enter insurance id: ");
 			int id = in.nextInt();
-			for (int i = 0; i < 3; i++){
-				if (testIns.insurances[i].getInsid() == id){
-					System.out.println(testIns.insurances[i].toString());
-				}
-			}
-
+			System.out.println(insurances[id-1].toString());
 		}
-		
-		
 		else if (ch ==0){
 			System.out.println("Bye, bye!");
 

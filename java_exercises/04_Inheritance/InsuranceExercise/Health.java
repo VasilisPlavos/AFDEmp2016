@@ -1,10 +1,9 @@
 
 public class Health extends Insurance {
 	int expense;
-	Health(int expense, int insid, int duration) {
-		super(duration, insid);
+	Health(String name, int year, String sex, int duration, int expense) {
+		super(name, year, sex, duration);
 		this.expense = expense;
-		// TODO Auto-generated constructor stub
 	}
 	
 	
@@ -15,15 +14,21 @@ public class Health extends Insurance {
 		this.expense = expense;
 	}
 	
-	int i = 0;
-	@Override
+	
 	public int ins_cost(){
-		for (i = 0; i<3;){
-		int cost = super.ins_cost()+ (7* (2016-testIns.customers[i].getYear()));
-		if (testIns.customers[i].getSex().equals("male")){
-				cost = cost+50;}
-		return cost;}
-		return i;
+		int cost = 0;
+		if (super.getSex().equals("male")){
+			cost = super.ins_cost() + 50 + (7* (2016 - super.getYear()));
+		}else cost = super.ins_cost() + (7 * (2016 - super.getYear()));
+		return cost;
 	}
+
+	@Override
+	public String toString() {
+		return "Health [expense=" + expense + super.toString();
+	}
+	
+	
+	
 	
 }

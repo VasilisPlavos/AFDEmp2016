@@ -1,28 +1,32 @@
 
-public class Insurance {
+public class Insurance extends Customer {
 	private int duration;
 	private final int insid;
-	private int cid;
 	static int count = 0;
 
-	Insurance (int duration, int cid){
+	Insurance (String name, int year, String sex, int duration){
+		super(name, year, sex);
 		++count;
 		this.insid = count;		
-		this.duration = duration;
-		this.cid = cid;		
+		this.duration = duration;	
 	}
+	
 
-
-
-
-
-	@Override
-	public String toString() {
-		return "Insurance [duration=" + duration + ", insid=" + insid + ", cid=" + cid + "]";
+	public int ins_cost() {
+		// TODO Auto-generated method stub
+		return 100;
 	}
-
-
-
+	
+	
+	public void printIns(){
+		System.out.println(toString());
+	}
+	
+	public void printInsId(int insid){
+		if (this.getInsid() == insid){
+			System.out.println(toString());
+		}
+	}
 
 
 	public int getDuration() {
@@ -30,31 +34,9 @@ public class Insurance {
 	}
 
 
-
-
-
 	public void setDuration(int duration) {
 		this.duration = duration;
 	}
-
-
-
-
-
-	public int getCid() {
-		return cid;
-	}
-
-
-
-
-
-	public void setCid(int cid) {
-		this.cid = cid;
-	}
-
-
-
 
 
 	public static int getCount() {
@@ -62,15 +44,9 @@ public class Insurance {
 	}
 
 
-
-
-
 	public static void setCount(int count) {
 		Insurance.count = count;
 	}
-
-
-
 
 
 	public int getInsid() {
@@ -78,13 +54,17 @@ public class Insurance {
 	}
 
 
-
-
-
-	public int ins_cost() {
-		// TODO Auto-generated method stub
-		return 100;
+	@Override
+	public String toString() {
+		return "Insurance [duration=" + duration + ", insid=" + insid + super.toString();
 	}
+	
+
+
+
+	
+	
+	
 
 
 
