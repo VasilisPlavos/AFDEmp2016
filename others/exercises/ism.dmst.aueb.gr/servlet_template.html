@@ -1,0 +1,162 @@
+<!Doctype html>
+<html>
+	
+<!-- Mirrored from ism.dmst.aueb.gr/bootcamp/servlet_template.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Dec 2016 15:01:19 GMT -->
+<head>
+		<title>Sample Servlet Template</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Servlet - Sample Template</h1>
+		
+		<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008000; font-weight: bold">package</span> org<span style="color: #666666">.</span><span style="color: #7D9029">afdemp</span><span style="color: #666666">.</span><span style="color: #7D9029">bootcamp</span><span style="color: #666666">.</span><span style="color: #7D9029">sofos</span><span style="color: #666666">.</span><span style="color: #7D9029">samples</span><span style="color: #666666">;</span>
+
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.IOException</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">java.io.PrintWriter</span><span style="color: #666666">;</span>
+
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.servlet.ServletException</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.servlet.annotation.WebServlet</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.servlet.http.HttpServlet</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.servlet.http.HttpServletRequest</span><span style="color: #666666">;</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">javax.servlet.http.HttpServletResponse</span><span style="color: #666666">;</span>
+
+<span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic"> * Servlet implementation class EmptyServletTemplate</span>
+<span style="color: #408080; font-style: italic"> */</span>
+<span style="color: #AA22FF">@WebServlet</span><span style="color: #666666">(</span>description <span style="color: #666666">=</span> <span style="color: #BA2121">&quot;A sample Servlet. Just for teaching purposes&quot;</span><span style="color: #666666">,</span> urlPatterns <span style="color: #666666">=</span> <span style="color: #666666">{</span> <span style="color: #BA2121">&quot;/template&quot;</span> <span style="color: #666666">})</span>
+<span style="color: #008000; font-weight: bold">public</span> <span style="color: #008000; font-weight: bold">class</span> <span style="color: #0000FF; font-weight: bold">EmptyServletTemplate</span> <span style="color: #008000; font-weight: bold">extends</span> HttpServlet <span style="color: #666666">{</span>
+	<span style="color: #008000; font-weight: bold">private</span> <span style="color: #008000; font-weight: bold">static</span> <span style="color: #008000; font-weight: bold">final</span> <span style="color: #B00040">long</span> serialVersionUID <span style="color: #666666">=</span> <span style="color: #666666">1L;</span>
+
+	<span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">	 * @see HttpServlet#HttpServlet()</span>
+<span style="color: #408080; font-style: italic">	 */</span>
+	<span style="color: #008000; font-weight: bold">public</span> <span style="color: #0000FF">EmptyServletTemplate</span><span style="color: #666666">()</span> <span style="color: #666666">{</span>
+		<span style="color: #008000; font-weight: bold">super</span><span style="color: #666666">();</span>
+		<span style="color: #408080; font-style: italic">// TODO Auto-generated constructor stub</span>
+	<span style="color: #666666">}</span>
+
+	<span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse</span>
+<span style="color: #408080; font-style: italic">	 *      response)</span>
+<span style="color: #408080; font-style: italic">	 */</span>
+	<span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">doGet</span><span style="color: #666666">(</span>HttpServletRequest request<span style="color: #666666">,</span> HttpServletResponse response<span style="color: #666666">)</span>
+			<span style="color: #008000; font-weight: bold">throws</span> ServletException<span style="color: #666666">,</span> IOException <span style="color: #666666">{</span>
+
+		response<span style="color: #666666">.</span><span style="color: #7D9029">setContentType</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;text/html; charset=UTF-8&quot;</span><span style="color: #666666">);</span>
+
+		PrintWriter out <span style="color: #666666">=</span> <span style="color: #008000; font-weight: bold">new</span> PrintWriter<span style="color: #666666">(</span>response<span style="color: #666666">.</span><span style="color: #7D9029">getWriter</span><span style="color: #666666">(),</span> <span style="color: #008000; font-weight: bold">true</span><span style="color: #666666">);</span>
+
+		<span style="color: #008000; font-weight: bold">try</span> <span style="color: #666666">{</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;&lt;!DOCTYPE html&gt;&quot;</span><span style="color: #666666">);</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;&lt;html&gt;&quot;</span><span style="color: #666666">);</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;  &lt;head&gt;&quot;</span><span style="color: #666666">);</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;    &lt;title&gt;Page Window Title Here&lt;/title&gt;&quot;</span><span style="color: #666666">);</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;    &lt;meta charset=&#39;UTF-8&#39;&gt;&quot;</span><span style="color: #666666">);</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;  &lt;/head&gt;&quot;</span><span style="color: #666666">);</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;  &lt;body&gt;&quot;</span><span style="color: #666666">);</span>
+
+			<span style="color: #408080; font-style: italic">// print, process or do something</span>
+
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;    &lt;h1&gt;Hello everybody&lt;/h1&gt;&quot;</span><span style="color: #666666">);</span>
+
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;    &lt;/body&gt;&quot;</span><span style="color: #666666">);</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot; &lt;/html&gt;&quot;</span><span style="color: #666666">);</span>
+
+		<span style="color: #666666">}</span> <span style="color: #008000; font-weight: bold">catch</span> <span style="color: #666666">(</span>Exception e<span style="color: #666666">)</span> <span style="color: #666666">{</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;Exception: &quot;</span> <span style="color: #666666">+</span> e<span style="color: #666666">.</span><span style="color: #7D9029">getMessage</span><span style="color: #666666">());</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;&lt;/body&gt;&quot;</span><span style="color: #666666">);</span>
+			out<span style="color: #666666">.</span><span style="color: #7D9029">println</span><span style="color: #666666">(</span><span style="color: #BA2121">&quot;&lt;/html&gt;&quot;</span><span style="color: #666666">);</span>
+		<span style="color: #666666">}</span>
+
+	<span style="color: #666666">}</span>
+
+	<span style="color: #408080; font-style: italic">/**</span>
+<span style="color: #408080; font-style: italic">	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse</span>
+<span style="color: #408080; font-style: italic">	 *      response)</span>
+<span style="color: #408080; font-style: italic">	 */</span>
+	<span style="color: #008000; font-weight: bold">protected</span> <span style="color: #B00040">void</span> <span style="color: #0000FF">doPost</span><span style="color: #666666">(</span>HttpServletRequest request<span style="color: #666666">,</span> HttpServletResponse response<span style="color: #666666">)</span>
+			<span style="color: #008000; font-weight: bold">throws</span> ServletException<span style="color: #666666">,</span> IOException <span style="color: #666666">{</span>
+		<span style="color: #408080; font-style: italic">// TODO Auto-generated method stub</span>
+		doGet<span style="color: #666666">(</span>request<span style="color: #666666">,</span> response<span style="color: #666666">);</span>
+	<span style="color: #666666">}</span>
+
+<span style="color: #666666">}</span>
+</pre></td></tr></table></div>
+
+		
+		
+	</body>
+
+<!-- Mirrored from ism.dmst.aueb.gr/bootcamp/servlet_template.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Dec 2016 15:01:19 GMT -->
+</html>
